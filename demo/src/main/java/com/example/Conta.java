@@ -1,6 +1,7 @@
 package com.example;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.ToString;
 
 
@@ -12,8 +13,10 @@ public abstract class Conta implements IConta {
 
 	@Getter
 	protected int agencia;
+	
 	@Getter
 	protected int numero;
+
 	@Getter
 	protected double saldo;
 
@@ -26,16 +29,19 @@ public abstract class Conta implements IConta {
 	}
 
 	@Override
+	@NonNull
 	public void sacar(double valor) {
 		saldo -= valor;
 	}
 
 	@Override
+	@NonNull
 	public void depositar(double valor) {
 		saldo += valor;
 	}
 
 	@Override
+	@NonNull
 	public void transferir(double valor, IConta contaDestino) {
 		this.sacar(valor);
 		contaDestino.depositar(valor);
