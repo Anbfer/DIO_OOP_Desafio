@@ -1,8 +1,10 @@
 package com.example;
 
+import lombok.Builder;
 
 public class ContaCorrente extends Conta {
 
+	@Builder(builderMethodName = "ContaCorrente")
 	public ContaCorrente(Cliente cliente) {
 		super(cliente);
 	}
