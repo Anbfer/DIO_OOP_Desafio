@@ -2,7 +2,7 @@ package com.bank;
 
 import java.util.Scanner;
 
-public class Facha {
+public class Fachada {
 
     String nomeCliente, resposta;
 
@@ -15,8 +15,11 @@ public class Facha {
         System.out.println("O nome do cliente realmente é " + nomeCliente + "? | S ou N: ");
         resposta = input.next();
 
-        while (condition) {
-            
+        while (resposta.toLowerCase().equals("n")) {
+            System.out.println("Informe o nome correto: ");
+            nomeCliente = input.next();
+            System.out.println("Confirma? S | N");
+            resposta = input.next();
         }
     }
 
